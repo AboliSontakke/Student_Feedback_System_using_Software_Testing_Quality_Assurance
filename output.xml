@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.9.9 on win32)" generated="2025-11-04T11:34:13.414156" rpa="false" schemaversion="5">
+<suite id="s1" name="Signup Test" source="C:\Users\Aboli\AutomationTests\signup_test.robot">
+<test id="s1-t1" name="Admin Login Test" line="14">
+<kw name="Admin Login" owner="AutomationLibrary">
+<msg time="2025-11-04T11:34:13.684424" level="INFO">====== WebDriver manager ======</msg>
+<msg time="2025-11-04T11:34:14.477826" level="INFO">Get LATEST chromedriver version for google-chrome</msg>
+<msg time="2025-11-04T11:34:14.904707" level="INFO">Get LATEST chromedriver version for google-chrome</msg>
+<msg time="2025-11-04T11:34:15.200893" level="INFO">Driver [C:\Users\Aboli\.wdm\drivers\chromedriver\win64\141.0.7390.122\chromedriver-win32/chromedriver.exe] found in cache</msg>
+<msg time="2025-11-04T11:34:29.950435" level="INFO">${result} = True</msg>
+<var>${result}</var>
+<arg>${ADMIN_EMAIL}</arg>
+<arg>${ADMIN_PASSWORD}</arg>
+<status status="PASS" start="2025-11-04T11:34:13.684424" elapsed="16.266011"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${result}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-11-04T11:34:29.951435" elapsed="0.001000"/>
+</kw>
+<status status="PASS" start="2025-11-04T11:34:13.683225" elapsed="16.269210"/>
+</test>
+<test id="s1-t2" name="Signup Test - Positive" line="18">
+<kw name="Signup User" owner="AutomationLibrary">
+<msg time="2025-11-04T11:34:45.640098" level="INFO">❌ Signup failed: Alert Text: Incorrect Credentials Entered
+Message: unexpected alert open: {Alert text : Incorrect Credentials Entered}
+  (Session info: chrome=141.0.7390.123)
+Stacktrace:
+	GetHandleVerifier [0x0x9ffe43+66515]
+	GetHandleVerifier [0x0x9ffe84+66580]
+	(No symbol) [0x0x7edc48]
+	(No symbol) [0x0x87d49e]
+	(No symbol) [0x0x85afc6]
+	(No symbol) [0x0x82c2ca]
+	(No symbol) [0x0x82d154]
+	GetHandleVerifier [0x0xc57353+2521315]
+	GetHandleVerifier [0x0xc522d3+2500707]
+	GetHandleVerifier [0x0xa27c94+229924]
+	GetHandleVerifier [0x0xa181f8+165768]
+	GetHandleVerifier [0x0xa1ecad+193085]
+	GetHandleVerifier [0x0xa08158+100072]
+	GetHandleVerifier [0x0xa082f0+100480]
+	GetHandleVerifier [0x0x9f25aa+11066]
+	BaseThreadInitThunk [0x0x76675d49+25]
+	RtlInitializeExceptionChain [0x0x77b3d6db+107]
+	RtlGetAppContainerNamedObjectPath [0x0x77b3d661+561]</msg>
+<msg time="2025-11-04T11:34:45.640606" level="INFO">${result} = False</msg>
+<var>${result}</var>
+<arg>${USER_EMAIL}</arg>
+<arg>${USER_FIRST}</arg>
+<arg>${USER_LAST}</arg>
+<arg>${USER_PASSWORD}</arg>
+<status status="PASS" start="2025-11-04T11:34:29.953435" elapsed="15.687171"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${result} == False</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-11-04T11:34:45.642128" elapsed="0.001012"/>
+</kw>
+<status status="PASS" start="2025-11-04T11:34:29.953435" elapsed="15.690705"/>
+</test>
+<test id="s1-t3" name="Signup Test - Negative" line="23">
+<kw name="Signup User" owner="AutomationLibrary">
+<msg time="2025-11-04T11:34:55.751689" level="INFO">❌ Signup failed: Message: 
+Stacktrace:
+	GetHandleVerifier [0x0x9ffe43+66515]
+	GetHandleVerifier [0x0x9ffe84+66580]
+	(No symbol) [0x0x7edc48]
+	(No symbol) [0x0x838704]
+	(No symbol) [0x0x838aab]
+	(No symbol) [0x0x87f482]
+	(No symbol) [0x0x85b214]
+	(No symbol) [0x0x87cba7]
+	(No symbol) [0x0x85afc6]
+	(No symbol) [0x0x82c2ca]
+	(No symbol) [0x0x82d154]
+	GetHandleVerifier [0x0xc57353+2521315]
+	GetHandleVerifier [0x0xc522d3+2500707]
+	GetHandleVerifier [0x0xa27c94+229924]
+	GetHandleVerifier [0x0xa181f8+165768]
+	GetHandleVerifier [0x0xa1ecad+193085]
+	GetHandleVerifier [0x0xa08158+100072]
+	GetHandleVerifier [0x0xa082f0+100480]
+	GetHandleVerifier [0x0x9f25aa+11066]
+	BaseThreadInitThunk [0x0x76675d49+25]
+	RtlInitializeExceptionChain [0x0x77b3d6db+107]
+	RtlGetAppContainerNamedObjectPath [0x0x77b3d661+561]</msg>
+<msg time="2025-11-04T11:34:55.751689" level="INFO">${result} = False</msg>
+<var>${result}</var>
+<arg>${USER_EMAIL}</arg>
+<arg>A</arg>
+<arg>${USER_LAST}</arg>
+<arg>${USER_PASSWORD}</arg>
+<status status="PASS" start="2025-11-04T11:34:45.659092" elapsed="10.092597"/>
+</kw>
+<kw name="Should Be False">
+<msg time="2025-11-04T11:34:55.752959" level="FAIL">No keyword with name 'Should Be False' found.</msg>
+<arg>${result}</arg>
+<status status="FAIL" start="2025-11-04T11:34:55.752959" elapsed="0.000000">No keyword with name 'Should Be False' found.</status>
+</kw>
+<status status="FAIL" start="2025-11-04T11:34:45.658178" elapsed="10.094781">No keyword with name 'Should Be False' found.</status>
+</test>
+<status status="FAIL" start="2025-11-04T11:34:13.415157" elapsed="42.338800"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Signup Test" id="s1" pass="2" fail="1" skip="0">Signup Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
